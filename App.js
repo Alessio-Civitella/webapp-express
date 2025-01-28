@@ -3,6 +3,14 @@ const express = require("express");
 const app = express();
 const port = 4000;
 const router = require("./routes/movieRoutes");
+const cors = require("cors")
+
+// Rendo disponibile chiamata a server tramite cors
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+  })
+);
 
 app.use(express.static("public"));
 app.use(express.json());
