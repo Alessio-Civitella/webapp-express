@@ -33,10 +33,8 @@ function show(req, res) {
         if (err) {
             return next(new Error(err.message));
         }
-        return res.status(200).json({
-            status: "success",
-            data: movies,
-        });
+        const obj = movies[0]
+        return res.status(200).json(obj);
     });
 };
 
